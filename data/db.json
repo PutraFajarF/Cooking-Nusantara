@@ -36,6 +36,18 @@
       ],
       "method": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse minima ex rem quis similique eum ratione quaerat, voluptas molestias ut repudiandae delectus voluptates. Eius esse at tenetur ab accusamus excepturi?",
       "cookingTime": "35 minutes"
+    },
+    {
+      "title": "rendang",
+      "ingredients": [
+        "daging sapi",
+        "bawang",
+        "cabe",
+        "kunyit"
+      ],
+      "method": "goreng 1 jam sampai daging matang",
+      "cookingTime": "60 minutes",
+      "id": "4P2tSTa"
     }
   ]
 }
