@@ -48,6 +48,27 @@
       "method": "goreng 1 jam sampai daging matang",
       "cookingTime": "60 minutes",
       "id": "4P2tSTa"
+    },
+    {
+      "title": "nasi goreng",
+      "ingredients": [
+        "nasi, bawang, kecap asin, garam, gula, daun bawang, cabai"
+      ],
+      "method": "goreng 30 menit",
+      "cookingTime": "30 minutes",
+      "id": "mK4Hxxv"
+    },
+    {
+      "title": "mie ayam",
+      "ingredients": [
+        "mie",
+        "ayam",
+        "cabe",
+        "daun bawang"
+      ],
+      "method": "rebut dengan menggunakan panci",
+      "cookingTime": "60 minutes",
+      "id": "29Vyzqh"
     }
   ]
 }
