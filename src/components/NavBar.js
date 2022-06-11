@@ -8,10 +8,10 @@ import Searchbar from "./Searchbar";
 
 
 const NavBar = () => {
-  const { color, changeColor } = useTheme();
+  const { color } = useTheme();
   return(
     <div className="navbar" style={{ background: color }}>
-      <nav onClick={() => changeColor('pink')}>
+      <nav>
         <Link to="/" className="brand">
           <h1>Cooking Nusantara</h1>
         </Link>
