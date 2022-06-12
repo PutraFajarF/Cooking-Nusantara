@@ -16,7 +16,7 @@ const NavBar = () => {
           <h1>Cooking Nusantara</h1>
         </Link>
         <Searchbar />
-        <Link to="create">
+        <Link to="create?action=create">
           Create Recipe
         </Link>
       </nav>

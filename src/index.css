@@ -35,7 +35,16 @@ input, textarea {
   color: #333;
 }
 
+.page-title.dark, .loading.dark, .error.dark {
+  color: #e4e4e4;
+}
+
 .loading, .error {
   text-align: center;
   margin: 40px auto;
+}
+
+.loader-image {
+  text-align: center;
+  margin-top: 20px;
 }

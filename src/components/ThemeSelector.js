@@ -1,4 +1,6 @@
 import { useTheme } from '../hooks/useTheme';
+
+// icon
 import modeIcon from '../assets/mode-icon.svg';
 
 // styles

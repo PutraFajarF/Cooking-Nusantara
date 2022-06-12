@@ -2,6 +2,11 @@ import { useParams } from 'react-router-dom';
 import { useTheme } from '../../hooks/useTheme';
 import { useEffect, useState } from 'react';
 import { projectFirestore } from '../../firebase/config';
+import { useNavigate } from 'react-router-dom';
+
+// icon
+import loader from '../../assets/loading.svg';
+import editIcon from '../../assets/edit.svg';
 
 // styles
 import './Recipe.css';
@@ -9,6 +14,7 @@ import './Recipe.css';
 const Recipe = () => {
   const { id } = useParams();
   const { mode } = useTheme();
+  const navigate = useNavigate();
 
   const [isPending, setIsPending] = useState(false);
   const [error, setError] = useState(null);
@@ -17,27 +23,32 @@ const Recipe = () => {
   useEffect(() => {
     setIsPending(true)
 
-    projectFirestore.collection('recipes').doc(id).get().then(doc => {
-      if (doc.exists) {
+    const recipeCollection = projectFirestore.collection('recipes');
+    const documentReference = recipeCollection.doc(id);
+    const unsub = documentReference.onSnapshot(snapshot => {
+      if (snapshot.exists) {
         setIsPending(false)
-        setRecipe(doc.data())
+        setRecipe(snapshot.data())
+        setError(false);
       } else {
         setIsPending(false)
         setError(`Could not find that recipe`)
       }
     })
-  }, [id]);
 
-  const handleClick = () => {
-    projectFirestore.collection('recipes').doc(id).update({
-      title: 'Change title'
-    })
-  }
+    return () => unsub();
+  }, [id]);
 
   return(
     <div className={`recipe ${mode}`}>
       {error && <p className='error'>{error}</p>}
-      {isPending && <p className='loading'>Loading..</p>}
+      {isPending && <div className='loader-image'>
+        <img 
+          src={loader}
+          alt='loading'
+          style={{filter: mode === 'dark' ? 'invert(100%)': 'invert(20%)'}}
+        />
+      </div>}
       {recipe && (
         <>
           <h2 className='page-title'>{recipe.title}</h2>
@@ -46,9 +57,15 @@ const Recipe = () => {
             {recipe.ingredients.map(ing => <li key={ing}>{ing}</li>)}
           </ul>
           <p className='method'>{recipe.method}</p>
-          <button onClick={handleClick}>Update Recipe</button>
         </>
       )}
+      <img 
+        className='edit-icon'
+        src={editIcon}
+        alt='Edit Recipe'
+        onClick={() => navigate(`/edit/${id}`)}
+        style={{filter: mode === 'dark' ? 'invert(100%)': 'invert(20%)'}}
+      />
     </div>
   )
 };
