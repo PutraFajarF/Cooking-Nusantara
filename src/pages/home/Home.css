@@ -2,3 +2,7 @@
   max-width: 1200px;
   margin: 60px auto;
 }
+
+.loading.dark, .error.dark {
+  color: #e4e4e4;
+}

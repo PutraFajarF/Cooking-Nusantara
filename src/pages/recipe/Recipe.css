@@ -5,6 +5,8 @@
   background: #fff;
   padding: 40px;
   box-sizing: border-box;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 .recipe ul {
@@ -27,6 +29,10 @@
   content: ".";
 }
 
+.recipe .edit-icon {
+  padding-top: 20px;
+}
+
 .method {
   text-align: left;
   line-height: 1.5em;
@@ -36,4 +42,12 @@
 .recipe.dark {
   background: #555;
   color: #e4e4e4;
+}
+
+.recipe.dark h2 {
+  color: #e4e4e4;
+}
+
+.recipe.dark li {
+  color: #afafaf;
 }

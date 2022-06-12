@@ -11,7 +11,7 @@ const Searchbar = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    setTerm('');
     navigate(`/search?q=${term}`);
   }
   return (
@@ -22,6 +22,7 @@ const Searchbar = () => {
           type='text'
           id='search'
           onChange={(e) => setTerm(e.target.value)}
+          value={term}
           required 
         />
       </form>

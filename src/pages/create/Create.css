@@ -16,13 +16,12 @@
 
 .create button {
   display: block;
-  width: 100px;
+  width: 200px;
   font-size: 1em;
   color: #fff;
   padding: 8px 20px;
   border: 0;
   border-radius: 4px;
-  background-color: #58249c;
   cursor: pointer;
   text-decoration: none;
   margin: 20px auto;
@@ -35,4 +34,12 @@
 
 .ingredients button {
   margin: 0 0 0 10px;
+}
+
+.ingredient-error {
+  color: crimson;
+}
+
+.create.dark , .create.dark h2{
+  color: #e4e4e4;
 }
